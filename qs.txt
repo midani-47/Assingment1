@@ -1,0 +1,36 @@
+*in agency:
+C:\Users\amida\Documents\IMC\Prog\INF_SS2024_ProgrammingII\Assignment1 8.4.24\src\model\agency.py
+in #TODO under def add_newspaper
+how to implement?
+is it:
+    def add_newspaper(self, new_paper: Newspaper):
+        #TODO: assert that ID does not exist  yet (or create a new one)
+        if new_paper.paper_id in [paper.paper_id for paper in self.newspapers]:
+            raise Exception(f"Newspaper with ID {new_paper.paper_id} already exists")
+        self.newspapers.append(new_paper)
+?
+
+
+*in newspaperNS:
+# TODO: this is not smart! you should find a better way to generate a unique ID!
+
+
+*app.py
+    # need to extend this class for custom objects, so that they can be jsonified
+    class CustomJSONEncoder(json.JSONEncoder):
+        def default(self, obj):
+            if isinstance(obj, Agency):
+                return obj.__dict__
+            return json.JSONEncoder.default(self, obj)
+
+* delete the newspaper and ALL ITS ISSUES?
+
+
+* defining lists in constructor
+
+
+* in newspaper.py  shouldn't the paper_id be a list? so you can eventually append subscribers to it?
+
+
+* Specify an editor for an issue. (Transmit the editor ID as parameter)
+	is giving a 400 error
