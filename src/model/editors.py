@@ -10,3 +10,4 @@ class Editor(object):
         self.list_of_newspapers: List[Newspaper] = []
         self.list_of_issues: List[Issue] = []
         self.payment = 100
+
